@@ -1,0 +1,281 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-dark: #070B14;
+    --bg-card: rgba(13, 21, 39, 0.7);
+    --border-card: rgba(255, 255, 255, 0.08);
+    --gold-accent: #F59E0B;
+    --cyan-accent: #06B6D4;
+    --green-accent: #10B981;
+  }
+
+  body {
+    background-color: #070B14;
+    color: #F1F5F9;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Outfit', sans-serif;
+  }
+}
+
+/* Custom Utilities */
+.glass-card {
+  background: rgba(13, 22, 40, 0.72);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+}
+
+.glass-card-hover {
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-card-hover:hover {
+  background: rgba(18, 30, 56, 0.85);
+  border-color: rgba(6, 182, 212, 0.35);
+  box-shadow: 0 16px 36px -12px rgba(6, 182, 212, 0.2);
+  transform: translateY(-2px);
+}
+
+.glass-card-gold {
+  background: rgba(26, 20, 10, 0.75);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(245, 158, 11, 0.25);
+  box-shadow: 0 10px 30px -10px rgba(245, 158, 11, 0.15);
+}
+
+.glass-input {
+  background: rgba(15, 23, 42, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(8px);
+}
+
+.glass-input:focus {
+  border-color: #06B6D4;
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(6, 182, 212, 0.25);
+}
+
+/* Glow effects */
+.glow-cyan {
+  box-shadow: 0 0 25px -5px rgba(6, 182, 212, 0.4);
+}
+
+.glow-gold {
+  box-shadow: 0 0 25px -5px rgba(245, 158, 11, 0.35);
+}
+
+.glow-green {
+  box-shadow: 0 0 25px -5px rgba(16, 185, 129, 0.35);
+}
+
+.text-glow-cyan {
+  text-shadow: 0 0 12px rgba(6, 182, 212, 0.5);
+}
+
+.text-glow-gold {
+  text-shadow: 0 0 12px rgba(245, 158, 11, 0.5);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+
+::-webkit-scrollbar-track {
+  background: #070B14;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1E293B;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #06B6D4;
+}
+
+/* Animations */
+@keyframes pulseGlow {
+  0%, 100% {
+    opacity: 0.5;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.85;
+    transform: scale(1.03);
+  }
+}
+
+.animate-pulse-glow {
+  animation: pulseGlow 4s ease-in-out infinite;
+}
+
+@keyframes spinSlow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin-slow {
+  animation: spinSlow 30s linear infinite;
+}
+
+/* Laser Scan Animation */
+@keyframes laserScan {
+  0% {
+    top: 5%;
+    opacity: 0.3;
+  }
+  50% {
+    top: 90%;
+    opacity: 0.95;
+  }
+  100% {
+    top: 5%;
+    opacity: 0.3;
+  }
+}
+
+.animate-laser-scan {
+  animation: laserScan 2.4s ease-in-out infinite;
+}
+
+/* Slow Organic Float */
+@keyframes floatSlow {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-8px) rotate(1deg);
+  }
+}
+
+.animate-float-slow {
+  animation: floatSlow 5s ease-in-out infinite;
+}
+
+/* Radar Sweep */
+@keyframes radarSweep {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-radar-sweep {
+  animation: radarSweep 4s linear infinite;
+}
+
+/* Shimmer Highlight */
+@keyframes shimmerGlow {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.animate-shimmer {
+  background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(6,182,212,0.2) 50%, rgba(255,255,255,0) 100%);
+  background-size: 200% 100%;
+  animation: shimmerGlow 3s infinite;
+}
+
+/* Holographic Pulse Ring */
+@keyframes pulseRing {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(6, 182, 212, 0.7);
+  }
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 14px rgba(6, 182, 212, 0);
+  }
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(6, 182, 212, 0);
+  }
+}
+
+.animate-pulse-ring {
+  animation: pulseRing 2.5s cubic-bezier(0.455, 0.03, 0.515, 0.955) infinite;
+}
+
+/* Gold Pulse Ring */
+@keyframes pulseRingGold {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(245, 158, 11, 0.7);
+  }
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 14px rgba(245, 158, 11, 0);
+  }
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(245, 158, 11, 0);
+  }
+}
+
+.animate-pulse-ring-gold {
+  animation: pulseRingGold 2.5s cubic-bezier(0.455, 0.03, 0.515, 0.955) infinite;
+}
+
+/* Counter-Floating reverse motion */
+@keyframes floatReverse {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(10px) rotate(-1.5deg);
+  }
+}
+
+.animate-float-reverse {
+  animation: floatReverse 6s ease-in-out infinite;
+}
+
+/* Cyber Hologram Glow */
+@keyframes hologramGlow {
+  0%, 100% {
+    opacity: 0.92;
+    filter: drop-shadow(0 0 8px rgba(6, 182, 212, 0.6));
+  }
+  50% {
+    opacity: 1;
+    filter: drop-shadow(0 0 18px rgba(245, 158, 11, 0.8));
+  }
+}
+
+.animate-hologram {
+  animation: hologramGlow 3s ease-in-out infinite;
+}
+
+/* Sound Waveform Bounce */
+@keyframes soundBar {
+  0%, 100% {
+    height: 4px;
+  }
+  50% {
+    height: 18px;
+  }
+}
+
+.animate-sound-bar-1 { animation: soundBar 0.8s ease-in-out infinite; }
+.animate-sound-bar-2 { animation: soundBar 0.6s ease-in-out infinite 0.15s; }
+.animate-sound-bar-3 { animation: soundBar 0.9s ease-in-out infinite 0.3s; }
+.animate-sound-bar-4 { animation: soundBar 0.7s ease-in-out infinite 0.45s; }
+
